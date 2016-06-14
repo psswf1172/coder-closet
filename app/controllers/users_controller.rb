@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	# from the devise social-login-in-rails
-	before_filter :set_user, only [:show, :edit, :update]
-	before_filter :validate_authorization_for_user, only: [:edit, :update]
+	before_action :set_user
+	before_action :validate_authorization_for_user, only: [:edit, :update]
 
   def show
   end
